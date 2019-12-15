@@ -71,11 +71,11 @@ def delete_item( user_id, id):
 def login():
     session = Session()
     sn.pop('user', None)
-    user = session.query(User).filter_by(email = request.form['email'] , password = request.form['password']).one()
-    if user:
+    try:
+        user = session.query(User).filter_by(email = request.form['email'] , password = request.form['password']).one()
         sn['user'] = request.form['email']
         return redirect(url_for('show_item', user_id=user.id))
-    else:
+    except:
         return render_template('login.html')
 
 
