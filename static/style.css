@@ -87,4 +87,18 @@ ul li a:hover{
 }
 .control{
     display: grid;
+    padding-top:20px;
+}
+
+.errormessage{
+    color:red;
+    background:yellow;
+}
+.logout{
+    position:absolute;
+    right:0px;
+    top:0px;
+    background:black;
+    color:white;
+    font-size:20px;
 }

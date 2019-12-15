@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+    <div class="header">To Do list</div>
+    <div class="container">
+        <form class="control" action="{{url_for('create_acc')}}" method="POST">
+            <input type="text" placeholder="First Name" name="first_name" class="formcontrol"><br>
+            <input type="text" placeholder="Last Name" name="last_name" class="formcontrol"><br>
+            <input type="text" placeholder="*****@example.com" name="email" class="formcontrol"><div class ="errormessage">{{error}}</div><br>
+            <input type="password" placeholder="Password" name="password" class="formcontrol"><br>
+            <input type="submit" value="Create Account" class="submit">
+        </form>
+    </div>
+</body>
+</html>

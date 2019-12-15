@@ -8,12 +8,12 @@
 <body>
     <div class="header">To Do List</div>
     <div class = "container">
-    <form action="{{url_for('add_item')}}" method="POST" class="control">
+    <form action="{{url_for('add_item' , user_id = user_id)}}" method="POST" class="control">
         <input name="item" type="text" placeholder="To Do list" class="formcontrol"><br>
         <input type="submit" value="Enter" name="enter" class ="submit">
 
     </form>
-        <form action="{{url_for('show_item')}}" method="POST" class="control">
+        <form action="{{url_for('show_item' , user_id = user_id)}}" method="POST" class="control">
         <input type="submit" value="Show" name="show" class ="submit">
         </form>
     </div>
