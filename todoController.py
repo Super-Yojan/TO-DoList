@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for, redirect, session, escape
+from flask import Flask, render_template, request, url_for, redirect, session
 import todo
 import os
 
@@ -94,6 +94,9 @@ def create_acc():
 def logout():
     session.pop('user_id', None)
     return redirect(url_for('new_todo'))
+
+
+
 
 
 if __name__ == '__main__':

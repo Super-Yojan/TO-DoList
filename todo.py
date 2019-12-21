@@ -8,7 +8,7 @@ Base.metadata.bind = engine
 Session = sessionmaker(bind=engine)
 
 
-def add_item( user_id , items):
+def add_item(user_id, items):
     session = Session()
     newitem = item(items=items, user_id=user_id)
     session.add(newitem)
@@ -27,16 +27,17 @@ def show_item(user_id, item_id):
     return one_item
 
 
-def login_verification(email , password):
+def login_verification(email, password):
     session = Session()
     try:
-        user = session.query(User).filter_by(email=email , password=password).one()
+        user = session.query(User).filter_by(email=email, password=password).one()
         return user
     except :
+        print('Didnot get any result')
         return None
 
 
-def create_account(first_name , last_name, email, password):
+def create_account(first_name, last_name, email, password):
     session = Session()
     oldUser = session.query(User).filter_by(email=email).all()
     if len(oldUser) == 0:
@@ -50,7 +51,7 @@ def create_account(first_name , last_name, email, password):
         return False
 
 
-def delete_item(user_id , id):
+def delete_item(user_id, id):
     session = Session()
     items = session.query(item).filter_by(user_id=user_id, id=id).one()
     session.delete(items)

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String , ForeignKey
+from sqlalchemy import Column, Integer, String , ForeignKey , BOOLEAN
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -14,6 +14,7 @@ class User(Base):
     last_name = Column(String(20))
     email = Column(String(50))
     password = Column(String(20))
+    #verified = Column(BOOLEAN, default=False)
 
 
 class item(Base):
